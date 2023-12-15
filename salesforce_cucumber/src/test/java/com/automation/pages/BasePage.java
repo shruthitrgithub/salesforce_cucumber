@@ -80,4 +80,9 @@ public class BasePage {
 	public  void swtichWindow(String windowName) {
 		driver.switchTo().window(windowName);
 	}
+
+	public  void swtichFrame(String windowName) {
+		driver.switchTo().frame(windowName);
+	}
+
 }

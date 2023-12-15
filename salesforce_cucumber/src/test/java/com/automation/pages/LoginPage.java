@@ -25,6 +25,11 @@ public class LoginPage  {
 	@FindBy(id = "un") WebElement forgotPassword_userName;
 	@FindBy(id = "continue") WebElement forgotPassword_continue;
 	@FindBy(name = "cancel") WebElement forgotPassword_cancel;
+	@FindBy(xpath = "//p[contains(text(),'We’ve sent you an email')]") WebElement forgotPassword_confirmation_message;
+	@FindBy(id="error") WebElement contact_Message;
+	
+	
+	
 
 	PropertiesUtility pro=new PropertiesUtility();
 	Properties appProp= pro.loadFile("applicationDataProperties");
@@ -102,4 +107,16 @@ public class LoginPage  {
 		String actualUserId= getSavedUsername();
 		Assert.assertEquals(validUserId, actualUserId);
 	}	
+	
+	public void verify_forgotPassword_confirmation_message () {
+		basePage.isElementPresent(forgotPassword_confirmation_message);
+	}
+	
+	public void verify_contact_admin_message () {
+		basePage.isElementPresent(contact_Message);
+	}
+	
+	
 }
+
+
