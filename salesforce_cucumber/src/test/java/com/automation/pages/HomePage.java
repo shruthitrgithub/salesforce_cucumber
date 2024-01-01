@@ -64,9 +64,12 @@ public class HomePage {
 	@FindBy(id ="chatterUploadFileAction") WebElement upload_From_Computer;
 	@FindBy(id ="chatterFile") WebElement choose_File_button;
 	@FindBy(id ="publishersharebutton") WebElement share_post_button;
-	
-	
-
+	@FindBy(xpath ="(//a[text()='Shruthi Ramachandra'])[1]") WebElement FirstandLastNameLink;
+	@FindBy(xpath ="//a[text()='Chatter']") WebElement Chatter;
+	//@FindBy(xpath ="(//img[@title=\"Edit Profile\"])[1]" WebElement Edit_Profile;
+	//(//a[text()='Shruthi Ramachandra'])[1]
+	////a[text()='Chatter']
+//(//img[@title="Edit Profile"])[1]
 	public HomePage() {		
 		PageFactory.initElements(DriverFactory.getDriver(), this);
 	}
@@ -231,5 +234,22 @@ public class HomePage {
 	public void click_Share_post_button() {
 		basePage.clickElement(share_post_button, timeOut);
 	}
+	public void Click_First_and_LName() {
+		basePage.clickElement(FirstandLastNameLink, timeOut);
+	}
+	public void verify_Chatter() {
+		basePage.isElementPresent(Chatter);
+		System.out.println("First Name Last Name page verified");
+	}
 	
-}
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+

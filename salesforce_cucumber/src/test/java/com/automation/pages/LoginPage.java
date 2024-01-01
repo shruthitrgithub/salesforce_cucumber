@@ -14,7 +14,6 @@ public class LoginPage  {
 
 	public static long timeOut = 30;
 
-
 	@FindBy(id ="username") WebElement userNameElement;
 	@FindBy(id = "password") WebElement password;
 	@FindBy(id = "Login") WebElement loginButton;
@@ -50,7 +49,14 @@ public class LoginPage  {
 
 	BasePage basePage = new BasePage();
 
-
+/*	@AfterStep
+	public void after_each_step(Scenario sc) throws IOException {
+		sc.log("after step executed");
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		byte[] fileContent = FileUtils.readFileToByteArray(screenshot);
+		sc.attach(fileContent, "image/png", "screenshot");
+	}
+*/	
 	public void enterUsername(String usernamedata) {
 		basePage.enterText(userNameElement, usernamedata);
 	}

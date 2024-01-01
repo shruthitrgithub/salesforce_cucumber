@@ -38,7 +38,10 @@ public class AccountsPage {
 	@FindBy(id ="saveReportDlg_DeveloperName") WebElement reportUniqueName;
 	@FindBy(id ="ext-gen314") WebElement saveButton_SaveReport;
 	@FindBy(xpath ="//h1[text()='Accounts']") WebElement accounts_HomePage;	
-	
+	@FindBy(className ="pageTitleIcon']") WebElement accounts_NewPage;	
+	@FindBy(xpath ="//*[@id=\"filter_element\"]/div/span/span[2]/a[1]") WebElement EditButton;
+	@FindBy(xpath="//h2[contains(text(),'Edit View')]") WebElement EditViewPage ;
+	@FindBy(xpath="//a[@title='Accounts Tab']") WebElement AccountsButton ;
 	
 	public AccountsPage() {		
 		PageFactory.initElements(DriverFactory.getDriver(), this);
@@ -52,7 +55,7 @@ public class AccountsPage {
 	}
 
 	public void click_Account_tab() {
-		basePage.clickElement(Account_tab, timeOut);
+		basePage.clickElement(AccountsButton, timeOut);
 	}
 
 	public void input_AccountName(String acctName) {
@@ -166,10 +169,30 @@ public class AccountsPage {
 	public void verify_Accounts_HomePage_displayed()	{
 		basePage.isElementPresent(accounts_HomePage);
 	}	
+	public void verify_Accounts_NewPage_displayed()	{
+		basePage.isElementPresent(accounts_NewPage);
+}
+
+	public void click_EditView()	{
+		basePage.clickElement(EditButton,timeOut);
+	}
+	
+
+	public void click_EditViewPage(){
+		basePage.isElementPresent(EditViewPage);
+}
+
+	public void  user_Cliks_on_MergeAccount() {
+		basePage.clickElement(mergeAccount, timeOut);
+	}
+	
+	 
+
 }
 
 
-	
+
+
 	
 	
 	

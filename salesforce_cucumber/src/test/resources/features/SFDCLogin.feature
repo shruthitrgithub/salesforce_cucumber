@@ -154,4 +154,261 @@ Feature: SFDC Login
     And User inputs valid password 
     And User clicks on Log in  
     And user Cliks on AccountLink
-		And Create New View
+		Then Account Page Should Be displayed
+		And User Clicks on new View Link
+		Then Newly added Link should be displayed
+		
+		 @SFDCLogin @TC12
+		 Scenario: Edit View 12
+    Given User launches Sales Force
+    When User inputs valid username
+    And User inputs valid password 
+    And User clicks on Log in  
+    And user Cliks on AccountLink
+  	Then Account Page Should Be displayed
+		And Click Edit View
+		Then Edit View Page Should be Displayed
+		
+		 @SFDCLogin @TC13
+		 Scenario: Merge Accounts 13
+		  Given User launches Sales Force
+    When User inputs valid username
+    And User inputs valid password 
+    And User clicks on Log in  
+    And user Cliks on AccountLink
+  	Then Account Page Should Be displayed
+  	And user Cliks on MergeAccount 
+  	And User clicks on textBox
+  	And User Clicks FindAccount
+  	Then Clicks on Nextbutton
+  	
+  	
+		 @SFDCLogin @TC14
+		 Scenario: Create Account Report 14
+		 Given User launches Sales Force
+    When User inputs valid username
+    And User inputs valid password 
+    And User clicks on Log in  
+    And user Cliks on AccountLink
+  	Then Account Page Should Be displayed
+  	And User Selects Account Activity
+		 And User Selects Date field
+		 And User Clicks on fromDate
+		 And User Clicks on toToday
+		 Then User Clicks on Save Unsaved Report
+		 And User Enters ReportName
+		 And User Enters UniqueReportName 
+		 Then User Clicks on Save Report
+		 
+		  @SFDCLogin @TC15
+		 Scenario: opportunities drop down 15
+	  Given User launches Sales Force
+    When User inputs valid username
+    And User inputs valid password 
+    And User clicks on Log in  
+    And User clicks oppurtunity Tab
+    Then Clicks on View DropDown
+    And User clicks on NewButton
+		 
+		  @SFDCLogin @TC16
+		 Scenario: Create a new Opty 16
+	  Given User launches Sales Force
+    When User inputs valid username
+    And User inputs valid password 
+    And User clicks on Log in  
+    And User clicks oppurtunity Tab
+		Then Clicks on New button
+	
+		 
+		  @SFDCLogin @TC17
+		 Scenario: Opportunity Pipeline Report 17
+		 Given User launches Sales Force
+    When User inputs valid username
+    And User inputs valid password 
+    And User clicks on Log in  
+    And User clicks oppurtunity Tab
+		Then Clicks on New button
+		And Clicks on Oppurtunity Pipeline
+		
+		 @SFDCLogin @TC18
+		 Scenario: TestTest Stuck Opportunities Report 18
+		 Given User launches Sales Force
+    When User inputs valid username
+    And User inputs valid password 
+    And User clicks on Log in  
+    And User clicks oppurtunity Tab
+		Then Clicks on New button
+		And Clicks on Oppurtunity Pipeline
+		And Clicks on Stuck Opportunities 
+		  
+		 @SFDCLogin @TC20
+		 Scenario: Leads Select View 20
+	 	 Given User launches Sales Force
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in  
+     And User clicks on Lead Tab
+		 
+		  @SFDCLogin @TC21
+		  Scenario: leadsSelectView 21
+		 Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in  
+     And User clicks on Lead Tab
+		 And Clicks on Lead Page DropDown
+		 
+		  @SFDCLogin @TC22
+		 Scenario: defaultView 22
+		 Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in  
+     And User clicks on Lead Tab
+     And Clicks on Lead Page DropDown
+     And Clicks the View DropDown List
+     And Selects User Menu
+     When User clicks log out
+     And Launches Sales Force
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in  
+     And User clicks on Lead Tab
+     And User clicks on GO button
+     
+       @SFDCLogin @TC23
+      Scenario: List item Todays Leads work 23
+     Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in  
+     And User clicks on Lead Tab
+     Then Todays Lead Page Should Be Displayed
+     
+        @SFDCLogin @TC24
+     Scenario: Check New button on Leads Home 24
+     Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in  
+     And User clicks on Lead Tab
+     And User Clicks on NewButton
+     Then Clicks on LastName
+     And Enters LastName
+     And Clicks on CompanyName
+     Then Enters CompanyName
+     
+        @SFDCLogin @TC25
+     Scenario: Create new contact 25
+     Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in  
+     When User clicks on contact tab
+     And User Clicks on NewButton
+     And Enters LastName on New Contact
+     And Enters AccountName
+     Then Clicks on Save
+		 
+		  @SFDCLogin @TC26
+		 Scenario: Create new view in the Contact Page
+		 Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in 
+     When User clicks on contact tab
+     And User Clicks on NewView 
+     And User Enters on ViewName
+     And User Clicks on ViewUniqueName
+     And Enters UniqueName
+     And Clicks on SaveElement
+		 
+		  
+		  @SFDCLogin @TC27
+		 Scenario: Create new view in the Contact Page
+		 Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in 
+    When User clicks on contact tab
+     And Selects Recent Contact DropDown
+		 
+		  @SFDCLogin @TC28
+		 Scenario: Check Mycontacts view in the Contact Page
+	  Given User launches Sales Force 
+    When User inputs valid username
+    And User inputs valid password 
+    And User clicks on Log in 
+	  When User clicks on contact tab
+	  Then Selects view DropDown
+	  And Selects Dropdown
+	  
+	   @SFDCLogin @TC29
+	   Scenario: View a contact in the contact Page
+		 Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in 
+	   When User clicks on contact tab
+	   
+	   @SFDCLogin @TC30
+	   Scenario: Error Message Check
+	    Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in 
+     When User clicks on contact tab
+     And Create New View hyperLink
+     And User Clicks on ViewUniqueName
+     And Enters UniqueName
+     And Clicks on SaveElement
+		 
+  @SFDCLogin @TC31
+		  Scenario: Error Message Check
+	    Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in 
+     When User clicks on contact tab
+     And Create New View hyperLink
+     And User Clicks on ViewUniqueName
+     And Enters UniqueName
+     And Clicks on Cancel
+		  
+		   @SFDCLogin @TC32
+		  Scenario: Check Save and new button
+	    Given User launches Sales Force 
+     When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in 
+     When User clicks on contact tab 
+		  And User Clicks on NewButton
+		  And Enters LastName on New Contact
+		   And Enters AccountName
+		 Then Clicks on saveandNew button
+		 
+		 	   @SFDCLogin @TC33
+	 Scenario: Verify if the firstname and lastname of the loggedin user is displayed
+	    Given User launches Sales Force 
+	   When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in 
+     And Clicks on HomeTab
+     And Clicks on First and LastName LInk
+     Then First and LastName Link Page is Displayed
+		 
+		    @SFDCLogin @TC34
+	 Scenario: Verify the edited lastname is updated at various places 
+		  Given User launches Sales Force 
+	   When User inputs valid username
+     And User inputs valid password 
+     And User clicks on Log in 
+		 And Clicks on First and LastName LInk
+		 Then clicks on Edit Profile
+		 And Clicks on about Tab
+		And User inputs last name
+		And Edits LastName
+	  And Clicks on save
+		
+		 
+		 

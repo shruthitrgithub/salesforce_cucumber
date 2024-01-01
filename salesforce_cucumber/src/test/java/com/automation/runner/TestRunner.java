@@ -6,10 +6,13 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = { "pretty","json:target/cucumberreports.json" }, 
+        plugin = { "pretty",
+        		"html:target/cucumberreports.html",
+        		"json:target/cucumberreports.json",
+        		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",}, 
         glue = {"com.automation.stepDefinitions","com.automation.base"}, 
         features = "src/test/resources/features/", 
-        tags="@SFDCLogin",
+        tags=" @SFDCLogin and @TC34",
         dryRun=false
     )
 public class TestRunner {
